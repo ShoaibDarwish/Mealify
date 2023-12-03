@@ -1,0 +1,970 @@
+/*^===================================> genral area */
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #fff;
+    border-left: 2px solid #eee;
+    box-shadow: 0px 0px 21px 0px #0003 inset;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #000;
+    box-shadow: 0px 0px 10px 0px #eeeeee8c inset;
+    border-radius: 100vh;
+}
+
+:root {
+
+    --secoundery-color: #37373f;
+    --red-color: #ce1212;
+    --background-color: #eeeeee;
+    --black-color: #212529;
+    --white-color: #fff;
+    --thired-color: #7d7d7d;
+    --heading-color: #212529;
+    --color-tertiary: #7f7f90;
+
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Amatic SC", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+
+    --animation-duration: 400ms
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* color: var(--color-tertiary); */
+}
+
+body {
+    font-family: var(--font-default);
+
+
+}
+
+::selection {
+    background-color: #d85454;
+    color: var(--white-color);
+}
+p,
+li,
+a{
+        color: var(--color-tertiary);
+}
+h1 a {
+    font-size: 30px;
+    color: var(--black-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-color);
+    font-family: var(--font-secondary);
+}
+
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: capitalize;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.bnt {
+    text-transform: capitalize;
+    border: none;
+    border-radius: 70px;
+    color: var(--white-color);
+    background-color: var(--red-color);
+}
+
+.bnt:hover {
+    background-color: #da1717;
+    cursor: pointer;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    font-family: var(--font-default);
+    color: var(--heading-color);
+}
+
+.overlay {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* &title style */
+.title {
+    margin-inline: auto;
+    text-align: center;
+
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+}
+
+.title h2 {
+    font-size: 0.875rem;
+    font-family: var(--font-default);
+}
+
+.title h3 {
+    font-size: 3.125rem;
+    color: var(--black-color);
+    font-family: var(--font-primary);
+}
+
+.title h3 span {
+    color: var(--red-color);
+    font-family: inherit;
+}
+
+.container {
+    width: 1320px;
+    margin-inline: auto;
+
+
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+}
+.go-up{
+    text-shadow:1px 1px 12px var(--red-color) ;
+    color: var(--red-color);
+    font-size: 40px;
+    right: 30px;
+    bottom: 50px;
+    position: fixed;
+    transition: all var(--animation-duration);
+}
+.go-up::after{
+    content: "up";
+    font-size: 12px;
+    position: absolute;
+    left: 13px;
+}
+.go-up:hover{
+    cursor: pointer;
+    rotate:180deg ;
+}
+.go-up:hover::after{
+content: "";
+}
+/*^ ===========    End genral         ==============================*/
+
+/* ^start nav */
+nav {
+    background-color: var(--white-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 9999999999;
+    box-shadow: 0px 0px 14px 0px #0000001b;
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav .container .easy-show{
+    display: flex; 
+    justify-content: center; 
+}
+nav .container li:hover .easy-show{
+    color: var(--red-color);
+}
+
+.dark--mode {
+    color: var(--black-color);
+    margin-right: 100px;
+    font-size: 24px;
+}
+.dark--mode:hover{
+    text-shadow:1px 1px 15px var(--red-color) ;
+
+}
+
+
+.not-dark {
+    display: none;
+}
+
+
+.dark:focus {
+    display: none;
+}
+
+h1 {
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: -100px;
+
+}
+
+h1::after {
+    content: ".";
+    color: var(--red-color);
+}
+
+nav ul {
+    width: 40%;
+    display: flex;
+    text-align: center;
+    /* justify-content: space-between; */
+    /* background-color: #c61616; */
+}
+
+nav ul li a {
+    padding-right: 30px;
+    font-size: 17px;
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    left: -2px;
+
+    bottom: -5px;
+    opacity: 0;
+    background-color: var(--red-color);
+    transition: var(--animation-duration);
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+}
+
+nav ul li a.wakeup::before {
+    content: "";
+    opacity: 1;
+}
+
+nav ul li a.wakeup {
+    color: var(--black-color);
+}
+
+
+.show-nav {
+    display: none;
+}
+
+.hide-nav {
+    display: none;
+}
+
+
+
+/* ^end nav */
+
+
+/* ^ start header */
+
+header {
+    height: 100vh;
+    margin-top: 70px;
+    display: flex;
+
+    background-color: var(--background-color);
+    align-items: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__content {
+    width: 40%;
+    margin-top: 15vh;
+
+}
+
+header .container .header__content h2 {
+    color: var(--secoundery-color);
+    font-family: var(--font-primary);
+    font-size: 4.0625rem;
+    padding-bottom: 20px;
+}
+
+header .container .header__content p {
+    color: var(--secoundery-color);
+}
+
+
+.card__image {
+    width: 40%;
+    filter: drop-shadow(4px 4px 9px #000a);
+}
+
+.card__image:hover {
+    animation: shake 1s infinite;
+
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(0deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(2deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
+
+.card__bnt .bnt {
+    padding: 0.625rem 1.5625rem;
+    font-size: 0.9375rem;
+    margin-top: 2.9375rem;
+}
+
+.header__button--BookaTable {
+    border-radius: 0px 100vh 100vh;
+
+}
+
+.header__button--WatchVideo {
+    color: var(--black-color);
+    background-color: transparent;
+    font-weight: 600;
+    
+    
+}
+
+.header__button--WatchVideo:hover {
+    background-color: transparent;
+    color: var(--red-color);
+}
+
+.icon {
+    font-size: 36px;
+
+}
+
+
+header i {
+    font-size: 20px;
+}
+
+header i::before {
+    border-top: 10px solid var(--red-color);
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--red-color);
+    border-left: 10px solid var(--red-color);
+    border-radius: 50%;
+}
+
+
+/* & end header */
+
+/* & start section chefs */
+section.chefs {
+    text-align: center;
+}
+
+.container .cards {
+    --gap: 1.8rem;
+    display: flex;
+    /*! overflow =======> i have wandering about why it still have padding from right side "i tried to use overflow:hiddin but it hidde my content when i use scale with hover" */
+    margin-right: -22px;
+    justify-content: space-between;
+
+}
+
+.card {
+    --radius: 15px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    width: calc(calc(100% - var(--gap) * 2) / 3);
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.226);
+    transition: scale var(--animation-duration);
+    position: relative;
+
+}
+
+.card picture img {
+    width: 100%;
+    /* border-radius: 15px 15px 0px 0px; */
+}
+
+.card-content {
+    background-color: var(--white-color);
+    /* border-radius: 0px 0px 15px 15px; */
+    position: relative;
+}
+
+.card-content .light-p {
+    font-size: 0.87rem;
+    margin-block: 0.3125rem 0.1rem;
+}
+
+.card-content--about {
+    font-style: italic;
+    padding: 30px;
+    font-size: 0.9375rem;
+
+}
+
+
+
+
+.contact .about h2 {
+    font-size: 20px;
+}
+
+svg {
+    position: absolute;
+    top: -56%;
+    left: 0;
+    right: 0;
+}
+
+.card .social-box {
+    position: absolute;
+    top: 1.5rem;
+    width: fit-content;
+    right: -3.125rem;
+    background-color: #ffffff4d;
+    width: fit-content;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    opacity: 0;
+    transition: right var(--animation-duration), opacity var(--animation-duration);
+
+}
+.card .social-box i{
+    padding: 10px;
+    color: #958f8d ;
+}
+.card .social-box i:hover{
+    color: var(--secoundery-color)   ;
+}
+.card:hover {
+    scale: 1.07;
+}
+
+.card:hover .social-box {
+    right: 10px;
+    opacity: 1;
+
+}
+
+/* & end section chefs  */
+/* ^ done */
+
+
+
+/* ^gallery  */
+section.gallery {
+    background-color: var(--background-color);
+    margin-block: 90px;
+    padding-block: 90px;
+}
+
+.one {
+    grid-area: a;
+}
+
+.two {
+    grid-area: b;
+}
+
+.three {
+    grid-area: c;
+}
+
+.four {
+    grid-area: d;
+}
+
+.five {
+    grid-area: e;
+}
+
+.sex {
+    grid-area: f;
+}
+
+.seven {
+    grid-area: g;
+}
+
+.gallery-photos {
+    display: grid;
+    /* grid-template-columns: 200px 200px 200px; */
+    /* grid-template-columns: repeat(3 ,1fr); */
+    /* grid-auto-rows: 33.3%; */
+    gap: 20px 20px;
+    /* clos 6 rows 6 */
+    grid-template-areas:
+        "a a b b c c"
+        "a a b b c c"
+        "d d b b e e"
+        "d d b b f f"
+        "d d g g f f"
+        ". . g g f f"
+    ;
+    /* row 6 cols3 */
+}
+
+.gallery-photos picture {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.gallery picture img {
+    width: 100%;
+    overflow: hidden;
+
+    transition: scale var(--animation-duration);
+}
+
+/* ! there are overflow ======> i've misunderstand why and how can i disaper the layout class from the out area of the img if the layeout tack his width from his perant "picture" and i made the width o hius perant by grid not display:flex*/
+/* ! stop runing,=============> i've onther question ,when i hover on the picture element the hover of scale run but end his activety after the onther layout hover run too" so how can i make it in his action "  */
+.layout {
+    background-color: #00000096;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    gap: 10px;
+    top: 100%;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: top var(--animation-duration),
+        opacity var(--animation-duration);
+}
+
+.layout h2,
+.layout p {
+    color: var(--white-color);
+    text-align: center;
+}
+
+.gallery-photos picture img {
+    /* border:1px solid var(--white-color); */
+}
+
+.gallery-photos picture:hover .layout {
+    opacity: 1;
+    top: 0;
+}
+
+.gallery-photos picture img:hover {
+    scale: 1.3;
+}
+
+/* & end gallery section */
+/* ^ done */
+
+/* & start section contact */
+.about i{
+    color: var(--red-color);
+    font-size: 24px;
+
+}
+
+
+
+
+ifrem {
+    z-index: -5;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.contact .about {
+    display: grid;
+    margin-top: 30px;
+    gap: 20px 20px;
+    grid-template-areas:
+        "ad ad em em"
+        "ph ph hr hr";
+    /* row 2 cols4 */
+
+    /* display: flex;
+flex-wrap: wrap; */
+}
+
+.about--address,
+.about--email,
+.about--phone,
+.about--hours {
+    width: 100%;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* ^ #f5f5f5      #00000014*/
+
+.contact .about--address {
+    grid-area: ad;
+
+}
+
+.contact .about--email {
+    grid-area: em;
+}
+
+.contact .about--phone {
+    grid-area: ph;
+}
+
+.contact .about--hours {
+    grid-area: hr;
+}
+
+.contact .about p,
+.contact .about span,
+.contact .about a {
+    color: #000;
+}
+
+.contact .about h2 {
+    color: var(--secoundery-color);
+}
+
+span {
+    font-weight: bold;
+}
+
+
+.info {
+    background-color: var(--white-color);
+    overflow: hidden;
+    border: 2px solid #f5f5f5;
+    margin-block: 40px;
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+form>* {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #00000014;
+    transition: border-color var(--animation-duration);
+}
+
+/* ! somsing wrong  */
+.info__area :is(input, textarea):focus {
+    border-color: var(--red-color);
+}
+
+/* & i solved it by ==> resize: vertical; =====> there are a somsing wrong when i hold the textarea and move it all form move and change the size for all "there are a relationship and i wanna fixed it" */
+.info__area {
+    display: grid;
+    margin: 20px;
+    gap: 20px 10px;
+
+    grid-template-areas:
+        "n e"
+        "s s"
+        "m m"
+        "m m";
+}
+
+.input1 {
+    grid-area: n;
+}
+
+.input2 {
+    grid-area: e;
+}
+
+.input3 {
+    grid-area: s;
+}
+
+.input4 {
+    grid-area: m;
+}
+
+textarea {
+    min-height: 9.375rem;
+    max-height: 18.75rem;
+    resize: vertical;
+}
+
+.bnt-send {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 10px;
+    margin-top: 10px;
+    width: 150px;
+    /* i dont need the next coment any more but ill let it to remember me about calc */
+    /*& 1320/100 *80= 1.056 /2 =528px cuz i cant write it by use calc */
+    /* margin-inline:528px; */
+
+}
+
+.bnt-tired {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* ^end CONTACT section hahahha */
+
+
+/* ^start footer */
+footer {
+
+    margin-inline: -50px;
+    margin-top: 80px;
+    background-image: url("../images/textured-metal-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+footer .overlay {
+    padding-block: 5px;
+}
+
+footer .container {
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+footer h3 {
+    font-size: 22px;
+}
+
+.footer--start {
+    width: 20%;
+    /* background-color: rgb(187, 165, 165); */
+}
+
+.footer--center {
+    width: 35%;
+    /* background-color: yellow; */
+
+}
+
+.footer--end {
+    width: 20%;
+    /* background-color: rgb(7, 137, 244); */
+
+}
+
+footer .overlay p,
+footer .overlay h2,
+footer .overlay h3,
+footer .overlay a,
+footer .overlay li,
+footer .overlay hr {
+    color: var(--white-color);
+
+}
+
+.first {
+    display: flex;
+    gap: 10px;
+    margin-block: 10px;
+}
+
+footer h2 {
+    font-size: 30px;
+    font-family: var(--font-default);
+}
+
+footer .footer--start h2::after {
+    content: ".";
+    color: var(--red-color);
+}
+
+footer p {
+    margin: 10px 0;
+
+}
+
+.footer--start h3 {
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid var(--white-color);
+
+}
+
+/* .footer--start h3::after{
+    content: "";
+    border-bottom: 2px solid var(--white-color);
+    width: 200px;
+    left: 50px;
+    top: 30px;
+    position: absolute;
+} */
+
+.social__media {
+    display: flex;
+    justify-content: center;
+    margin-block: 30px;
+}
+
+.social__media li {
+    padding-left: 30px;
+    font-size: 20px;
+    
+    
+}
+
+footer img {
+    width: 40px;
+}
+
+/* * */
+.footer--center {
+    margin-top: 10px;
+}
+
+footer input {
+    width: 70%;
+    padding: 10px;
+}
+
+footer button.bnt {
+    font-weight: 600px;
+    font-size: 16px;
+    width: 25%;
+    padding: 9px;
+    border-radius: 0px;
+    margin-block: 10px;
+}
+
+.footer--center li {
+    position: relative;
+}
+
+.footer--center li::before {
+    content: "> ";
+    font-size: larger;
+    color: inherit;
+}
+
+.footer--center ul {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.footer--center ul li {
+    width: 40%;
+    margin-inline: 10px;
+    margin-block: 5px;
+    transition: transform var(--animation-duration);
+}
+
+.footer--center ul li:hover {
+    background-color: #222;
+    color: var(--red-color);
+    transform: translateX(10px);
+    cursor: pointer;
+
+}
+
+/* * */
+.footer--end {
+    margin-bottom: 10px;
+}
+
+.footer--end li {
+    margin-block: 10px;
+}
+
+.footer--end i {
+    margin: 10px;
+    color: var(--red-color);
+    font-size: 24px;
+
+}
